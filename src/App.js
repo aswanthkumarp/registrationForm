@@ -74,7 +74,7 @@ function RegistrationForm() {
       <InputField
         label="Repeat Password"
         type={showRepeatPassword ? "text" : "password"}
-        name="repeatpassword"
+        name="confirmPassword"
         placeholder="Repeat the Password"
         value={values.repeatpassword}
         onChange={handleInput}
@@ -145,12 +145,12 @@ const useForm = () => {
     }
     if (values.password.length < 8) {
       newErrors.password = "too short";
-    } else if (!values.password === values.confirmPassword) {
+    }  if (values.password !== values.confirmPassword) {
       newErrors.confirmPassword = "password doesn't match";
     }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
-
+  
   return { values, handleInput, reset, validate, errors };
 };
