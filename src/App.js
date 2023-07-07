@@ -53,7 +53,7 @@ function RegistrationForm() {
       />
       <InputField
         label="Email Address"
-        type="email"
+        type="mail"
         name="email"
         placeholder="Enter your Email"
         value={values.email}
